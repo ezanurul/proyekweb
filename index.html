@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U Be Good | Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>U Be Good Menu</h1>
+        <p>U BE GOOD - Camilan Sehat, Topping Lezat! Dengan Ubi Oven dan perpaduan topping yang menarik.</p>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu">
+        <div class="menu-container">
+            <div class="menu-item" data-aos="fade-up">
+                <div class="menu-img-wrapper">
+                    <img src="p2.jpg" alt="Original" class="menu-img">
+                    <div class="price-tag">Rp 10.000</div>
+                </div>
+                <div class="menu-description">
+                    <h3>Original</h3>
+                    <p>Ubi mix dengan vla dan gula</p>
+                    <a href="https://wa.me/6281228491786" target="_blank" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Produk Tambahan -->
+            <div class="menu-item" data-aos="fade-up">
+                <div class="menu-img-wrapper">
+                    <img src="p6.jpg" alt="Banana Delight" class="menu-img">
+                    <div class="price-tag">Rp 12.000</div>
+                </div>
+                <div class="menu-description">
+                    <h3>Banana Delight</h3>
+                    <p>Ubi mix dengan vla dan pisang emas</p>
+                    <a href="https://wa.me/6281228491786" target="_blank" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="menu-item" data-aos="fade-up">
+                <div class="menu-img-wrapper">
+                    <img src="p3.jpg" alt="Savory Cheese" class="menu-img">
+                    <div class="price-tag">Rp 14.000</div>
+                </div>
+                <div class="menu-description">
+                    <h3>Savory Cheese</h3>
+                    <p>Ubi mix dengan vla dan keju</p>
+                    <a href="https://wa.me/6281228491786" target="_blank" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Connect With Us</h2>
+        <div class="contact-links">
+            <a href="https://wa.me/6281228491786" target="_blank" class="contact-btn whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/ubegood.official/" target="_blank" class="contact-btn instagram">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.tiktok.com/@ubeegood.official?is_from_webapp=1&sender_device=pc" target="_blank" class="contact-btn tiktok">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+        </div>
+    </section>
+
+    <section class="order-form">
+        <h2>Pesan Sekarang</h2>
+        <form action="order.php" method="POST">
+            <input type="text" name="name" placeholder="Nama Anda" required>
+            <input type="text" name="phone" placeholder="Nomor WhatsApp" required>
+            <select name="menu" id="menu" required>
+                <option value="Original" data-price="10000">Original - Rp 10.000</option>
+                <option value="Banana Delight" data-price="12000">Banana Delight - Rp 12.000</option>
+                <option value="Savory Cheese" data-price="14000">Savory Cheese - Rp 14.000</option>
+            </select>
+            <input type="hidden" name="price" id="price" value="10000">
+            <button type="submit">Kirim Pesanan</button>
+        </form>
+    </section>
+
+    <script>
+        // Update harga otomatis saat menu dipilih
+        document.getElementById("menu").addEventListener("change", function () {
+            let selectedOption = this.options[this.selectedIndex];
+            document.getElementById("price").value = selectedOption.getAttribute("data-price");
+        });
+    </script>    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Ubegood Menu. All rights reserved.</p>
+    </footer>
+
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>
